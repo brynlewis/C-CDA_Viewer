@@ -1,8 +1,8 @@
 <h1>HL7 C-CDA Viewer: (Intelsoft)</h1>
 
-<p>Complex C-CDA documents are rendered directly in the browser.</p>
-<p>Document layout instantly and automatically adjusts to make optimum use of the available screen space.</p>
-<p>Users can hide, collapse and move any section of a CDA document.</p>
+Complex C-CDA documents are rendered directly in the browser.
+Document layout instantly and automatically adjusts to make optimum use of the available screen space.
+Users can hide, collapse and move any section of a CDA document.
 <p>Document sections can be manipulated directly via button clicks, drag and drop or via a document Table Of Contents (TOC).</p>
 <p>All user preferences are saved and automatically applied to <b>subsequent CDA documents opened</b>.</p>
 
@@ -68,23 +68,23 @@ Icons: font-awesome standard icon set. https://fortawesome.github.io/Font-Awesom
 Background css: purecss.io
 
 <h2>Copyright</h2>
- * Copyright (c) 2016 Bryn Lewis (<mailto:brynlewis@intelsoft.com.au>)
- * <http://intelsoft.com.au>
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a
- * copy of this software and associated documentation files (the "Software"),
- * to deal in the Software without restriction, including without limitation
- * the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included
- * in all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
- * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
- * NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
- * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
- * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
- * USE OR OTHER DEALINGS IN THE SOFTWARE.
+ Copyright (c) 2016 Bryn Lewis (<mailto:brynlewis@intelsoft.com.au>)
+ <http://intelsoft.com.au>
+ 
+Permission is hereby granted, free of charge, to any person obtaining a
+ copy of this software and associated documentation files (the "Software"),
+ to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the
+ Software is furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+ NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+ USE OR OTHER DEALINGS IN THE SOFTWARE.
