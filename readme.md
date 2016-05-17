@@ -1,6 +1,6 @@
 <h1>HL7 C-CDA Viewer: (Intelsoft)</h1>
 
-<h2>Synopsis</p>
+<h2>Synopsis</h2>
 Easy to use rendering of complex C-CDA documents directly in any web browser.
 Document layout instantly and automatically adjusts to make optimum use of the available screen space.
 Users can hide, collapse and move any section of a CDA document.
