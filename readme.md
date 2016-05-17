@@ -1,10 +1,12 @@
 <h1>HL7 C-CDA Viewer: (Intelsoft)</h1>
 
+<h2>Synopsis</p>
 Easy to use rendering of complex C-CDA documents directly in any web browser.
 Document layout instantly and automatically adjusts to make optimum use of the available screen space.
 Users can hide, collapse and move any section of a CDA document.
 <p>Document sections can be manipulated directly via button clicks, drag and drop or via a document Table Of Contents (TOC).</p>
 <p>All user preferences are saved and automatically applied to <b>subsequent CDA documents opened</b>.</p>
+<img src="demo.gif" />
 
 <p>The result is an intuitive and easy to use document layout that users can control directly.</p>
 <p>All this using simple deployment via a local fileset or web server.</p>
@@ -23,6 +25,7 @@ http://intelsoft.com.au/challenge/home.htm
 <li>Users can control document layout via Section hide/show, collapse/expand and re-ordering. </li>
 <li>As user makes changes, the layout adjusts to make best use of available screen space.</li>
 <li>All changes are saved as preferences that will apply across documents (ie open a new document and the same order/visibility preferences are applied against all sections). If you have moved 'Procedures' to the top of the document, then 'Procedures' will be at the top of the next document opened.</li>
+Sample documents are available, or you can cut and paste the xml of a C-CDA document into the text box, then click 'View'.
 
 <h2>Move and Re-Ordering</h2>
 <li>Drag and Drop a section where you want it to go.</li>
@@ -43,9 +46,9 @@ http://intelsoft.com.au/challenge/home.htm
 <h2>Deployment</h2>
 <h3>Local Deployment</h3>
 Download the fileset. 
-Open 'index.htm'
+Open 'index.htm' in a web browser.
 <h3>Web Deployment</h3>
-Download the fileset and save to a public directory (eg. C-CDA_Viewer). The viewer is available at:
+Download the fileset and save to a public directory (eg. C-CDA_Viewer). The viewer is then available at:
 <p>http://yoururl/[C-CDA_Viewer_path]/index.htm</p>
 
 Enjoy.
@@ -60,7 +63,7 @@ xslt.js: a javascript library that performs xsl transformations in the browser. 
 <p>The xslt.js library was updated as it would not work in IE11.</p>
 The transformation is carred out in core.js:
 
-new Transformation().setXml(cdaxml).setXslt('cda.xsl').transform("viewcda");
+<code>new Transformation().setXml(cdaxml).setXslt('cda.xsl').transform("viewcda");</code>
 
 cdaxml is an xml string that is set in the script.
 'cda.xsl' is a local xsl file.
@@ -73,7 +76,8 @@ Background css: purecss.io
 
 <h2>Copyright</h2>
  Copyright (c) 2016 Bryn Lewis (<mailto:brynlewis@intelsoft.com.au>)
- <http://intelsoft.com.au>
+ 
+<p><http://intelsoft.com.au></p>
  
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
