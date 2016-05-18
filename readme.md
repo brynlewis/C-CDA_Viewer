@@ -2,11 +2,11 @@
 
 <h2>Synopsis</h2>
 Easy to use rendering of complex C-CDA documents directly in any web browser.
-Document layout instantly and automatically adjusts to make optimum use of the available screen space.
+Responsive ocument layout automatically adjusts to make optimum use of the available screen space.
 Users can hide, collapse and move any section of a CDA document.
 <p>Document sections can be manipulated directly via button clicks, drag and drop or via a document Table Of Contents (TOC).</p>
 <p>All user preferences are saved and automatically applied to <b>subsequent CDA documents opened</b>.</p>
-<img src="demo.gif" />
+<img src="https://cloud.githubusercontent.com/assets/17036351/15345667/5f24a74a-1cf4-11e6-8739-374faa221a35.gif" />
 
 <p>The result is an intuitive and easy to use document layout that users can control directly.</p>
 <p>All this using simple deployment via a local fileset or web server.</p>
