@@ -10,7 +10,7 @@ Users can hide, collapse and move any section of a CDA document.
 <p>The result is an intuitive and easy to use document layout that users can control directly.</p>
 <img src="https://cloud.githubusercontent.com/assets/17036351/15345667/5f24a74a-1cf4-11e6-8739-374faa221a35.gif" />
 
-<p>All this using simple deployment via a local fileset or web server.</p>
+<p>All this using simple deployment via a local fileset or web server (and its very pretty).</p>
 <p>Sample documents are included in the deployment. Any C-CDA document can be rendered via cut and paste of the document text.</p>
 
 <h2>Platform</h2>
