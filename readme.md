@@ -2,13 +2,14 @@
 
 <h2>Synopsis</h2>
 Easy to use rendering of complex C-CDA documents directly in any web browser.
-Responsive ocument layout automatically adjusts to make optimum use of the available screen space.
+Responsive document layout automatically adjusts to make optimum use of the available screen space.
 Users can hide, collapse and move any section of a CDA document.
 <p>Document sections can be manipulated directly via button clicks, drag and drop or via a document Table Of Contents (TOC).</p>
 <p>All user preferences are saved and automatically applied to <b>subsequent CDA documents opened</b>.</p>
+<p>Ability to detect and hide/show duplicates.</p>
+<p>The result is an intuitive and easy to use document layout that users can control directly.</p>
 <img src="https://cloud.githubusercontent.com/assets/17036351/15345667/5f24a74a-1cf4-11e6-8739-374faa221a35.gif" />
 
-<p>The result is an intuitive and easy to use document layout that users can control directly.</p>
 <p>All this using simple deployment via a local fileset or web server.</p>
 <p>Sample documents are included in the deployment. Any C-CDA document can be rendered via cut and paste of the document text.</p>
 
@@ -19,13 +20,20 @@ Users can hide, collapse and move any section of a CDA document.
 
 <h2>Demonstration</h2>
 A demonstration version is deployed here:
-http://intelsoft.com.au/challenge/home.htm
+http://intelsoft.com.au/challenge/index.htm
 
 <h2>Features</h2>
+<ul>
 <li>Users can control document layout via Section hide/show, collapse/expand and re-ordering. </li>
 <li>As user makes changes, the layout adjusts to make best use of available screen space.</li>
-<li>All changes are saved as preferences that will apply across documents (ie open a new document and the same order/visibility preferences are applied against all sections). If you have moved 'Procedures' to the top of the document, then 'Procedures' will be at the top of the next document opened.</li>
+<li>All changes are saved as preferences that will apply across documents (ie open a new document and the same order/visibility preferences are applied against all sections).</li>
+<ul>
+	<li>Sections are identified via coding applied across documents.</li>
+</ul>
+<li>eg. If 'Procedures' has been moved to the top of the document, then 'Procedures' will be at the top of the next document opened.</li>
 Sample documents are available, or you can cut and paste the xml of a C-CDA document into the text box, then click 'View'.
+<li>Duplicate entries in tables are detected. The user can decide whether these are hidden or shown.</li>
+</ul>
 
 <h2>Move and Re-Ordering</h2>
 <li>Drag and Drop a section where you want it to go.</li>
@@ -76,11 +84,16 @@ Background css: purecss.io
 
 <h2>Copyright</h2>
  Copyright (c) 2016 Bryn Lewis (<mailto:brynlewis@intelsoft.com.au>)
- 
 <p><http://intelsoft.com.au></p>
  
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
