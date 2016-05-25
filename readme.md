@@ -80,10 +80,11 @@ xslt.js: a javascript library that performs xsl transformations in the browser. 
 The transformation is carred out in core.js:
 
 <code>
-//cdaxml: xml string that is set in the script.
-//cda.xsl: local xsl file.
-//#viewcda: target div
-
+/*
+cdaxml: xml string that is set in the script.
+cda.xsl: local xsl file.
+#viewcda: target div
+*/
 new Transformation().setXml(cdaxml).setXslt('cda.xsl').transform("viewcda");
 </code>
 
