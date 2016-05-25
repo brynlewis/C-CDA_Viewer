@@ -73,7 +73,7 @@ Enjoy.
 
 
 <h2>Implementation</h2>
-core.js: Most of the C-CDA specific processing is carried out in core.js.
+core.js: C-CDA specific processing is carried out in core.js.
 
 xslt.js: a javascript library that performs xsl transformations in the browser. A transformation requires two input strings, an xml and xsl string. Both must be well formed xml.
 <p>The xslt.js library was updated as it would not work in IE11.</p>
@@ -85,9 +85,9 @@ new Transformation().setXml(cdaxml).setXslt('cda.xsl').transform("viewcda");
 
 cdaxml: xml string that is set in the script.
 cda.xsl: local xsl file.
-#viewcda: target div
+viewcda: target div
 
-XSL: cda.xsl is an extension of ANSI/HL7 CDAR2 (cda.xsl), which provides provision of narrative content. The extensions allow the dynamic layout functionality.
+XSL: cda.xsl is an extension of ANSI/HL7 CDAR2, v.3 (cda.xsl), which provides provision of narrative content. The extensions allow the dynamic layout functionality.
 
 Layout: packery javascript library. http://packery.metafizzy.co/
 
@@ -97,7 +97,7 @@ Background css: purecss.io
 
 <h2>Copyright</h2>
  Copyright (c) 2016 Bryn Lewis (<mailto:brynlewis@intelsoft.com.au>)
-<p><http://intelsoft.com.au></p>
+<http://intelsoft.com.au>
  
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
