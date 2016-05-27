@@ -1,0 +1,1070 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" templateId="2.16.840.1.113883.3.27.1776">
+	<!-- 
+********************************************************
+  CDA Header
+********************************************************
+-->
+	<id extension="c266" root="2.16.840.1.113883.3.933"/>
+	<code code="11488-4" codeSystem="2.16.840.1.113883.6.1" displayName="Consultation note"/>
+	<title>Good Health Clinic Consultation Note</title>
+	<effectiveTime value="20000407"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<setId extension="BB35" root="2.16.840.1.113883.3.933"/>
+	<versionNumber value="2"/>
+	<legalAuthenticator>
+		<time value="20000408"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id extension="KP00017" root="2.16.840.1.113883.3.933"/>
+			<assignedPerson>
+				<name>
+					<given>Robert</given>
+					<family>Dolin</family>
+					<suffix>MD</suffix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id extension="M345" root="2.16.840.1.113883.3.933"/>
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<author>
+		<time value="20000407"/>
+		<assignedAuthor>
+			<id extension="KP00017" root="2.16.840.1.113883.3.933"/>
+			<assignedPerson>
+				<name>
+					<given>Robert</given>
+					<family>Dolin</family>
+					<suffix>MD</suffix>
+				</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id extension="M345" root="2.16.840.1.113883.3.933"/>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id extension="M345" root="2.16.840.1.113883.3.933"/>
+				<name>Good Health Clinic</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<recordTarget>
+		<patientRole>
+			<id extension="12345" root="2.16.840.1.113883.3.933"/>
+			<patientPatient>
+				<name>
+					<given>Henry</given>
+					<family>Levin</family>
+					<suffix>the 7th</suffix>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+				<birthTime value="19320924"/>
+			</patientPatient>
+			<providerOrganization>
+				<id extension="M345" root="2.16.840.1.113883.3.933"/>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<relatedDocument typeCode="RPLC">
+		<parentDocument>
+			<id extension="a123" root="2.16.840.1.113883.3.933"/>
+			<setId extension="BB35" root="2.16.840.1.113883.3.933"/>
+			<versionNumber value="1"/>
+		</parentDocument>
+	</relatedDocument>
+	<componentOf>
+		<currentEncounter>
+			<id extension="KPENC1332" root="2.16.840.1.113883.3.933"/>
+			<effectiveTime value="20000407"/>
+			<location>
+				<healthCareFacility classCode="DSDLOC">
+					<code code="GIM" codeSystem="2.16.840.1.113883.5.10588" displayName="General internal medicine clinic"/>
+				</healthCareFacility>
+			</location>
+			<encounterPerformer typeCode="CON">
+				<time value="20000407"/>
+				<assignedEntity>
+					<id extension="KP00017" root="2.16.840.1.113883.3.933"/>
+					<assignedPerson>
+						<name>
+							<given>Robert</given>
+							<family>Dolin</family>
+							<suffix>MD</suffix>
+						</name>
+					</assignedPerson>
+					<representedOrganization>
+						<id extension="M345" root="2.16.840.1.113883.3.933"/>
+					</representedOrganization>
+				</assignedEntity>
+			</encounterPerformer>
+		</currentEncounter>
+	</componentOf>
+	<!-- 
+********************************************************
+  CDA Body
+********************************************************
+-->
+	<component>
+		<StructuredBody>
+			<!-- 
+********************************************************
+  History of Present Illness section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="10164-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>History of Present Illness</title>
+					<text>Henry Levin, the 7th is a 67 year old male referred for further asthma management. Onset of asthma in his <content revised="delete">twenties</content><content revised="insert">teens</content>. He was hospitalized twice last year, and already twice this year. He has not been able to be weaned off steroids for the past several months. 
+						</text>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  Past Medical History section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="10153-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Past Medical History</title>
+					<text>
+						<list>
+							<item>
+								<content ID="a1">Asthma</content>
+							</item>
+							<item>
+								<content ID="a2">Hypertension (see HTN.cda for details)</content>
+							</item>
+							<item>
+								<content ID="a3">Osteoarthritis, 
+									<content ID="a4">right knee</content>
+								</content>
+							</item>
+						</list>
+					</text>
+					<entry>
+						<Observation classCode="COND">
+							<code code="39154008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="clinical diagnosis"/>
+							<effectiveTime value="1950"/>
+							<value xsi:type="CD" code="195967001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Asthma">
+								<originalText>
+									<reference value="#a1"/>
+								</originalText>
+							</value>
+							<reference typeCode="XCRPT">
+								<!-- A reference of type "XCRPT" can be used to show that this problem list value is excerpted from the referenced external observation. -->
+								<ExternalObservation>
+									<id root="123.456.789.23.17"/>
+								</ExternalObservation>
+							</reference>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation classCode="COND">
+							<code code="39154008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="clinical diagnosis"/>
+							<value xsi:type="CD" code="59621000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="HTN">
+								<originalText>
+									<reference value="#a2"/>
+								</originalText>
+							</value>
+							<reference typeCode="SPRT">
+								<seperatableInd value="false"/>
+								<ExternalDocument>
+									<id root="123.456.789"/>
+									<text mediaType="multipart/related">
+										<reference value="HTN.cda"/>
+									</text>
+									<setId root="147.89.9001"/>
+									<versionNumber value="1"/>
+								</ExternalDocument>
+							</reference>
+							<reference typeCode="XCRPT">
+								<ExternalObservation>
+									<id root="123.456.789.23.18"/>
+								</ExternalObservation>
+							</reference>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation classCode="COND">
+							<code code="39154008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="clinical diagnosis"/>
+							<value xsi:type="CD" code="396275006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Osteoarthritis">
+								<originalText>
+									<reference value="#a3"/>
+								</originalText>
+							</value>
+							<targetSiteCode code="49076000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Knee joint">
+								<originalText>
+									<reference value="#a4"/>
+								</originalText>
+								<qualifier>
+									<name code="78615007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="with laterality"/>
+									<value code="24028007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="right"/>
+								</qualifier>
+							</targetSiteCode>
+							<reference typeCode="XCRPT">
+								<ExternalObservation>
+									<id root="123.456.789.23.18"/>
+								</ExternalObservation>
+							</reference>
+						</Observation>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  Medications section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Medications</title>
+					<text>
+						<list>
+							<item>Theodur 200mg BID</item>
+							<item>Proventil inhaler 2puffs QID PRN</item>
+							<item>Prednisone 20mg qd</item>
+							<item>HCTZ 25mg qd</item>
+						</list>
+					</text>
+					<entry>
+						<SubstanceAdministration>
+							<text>Theodur 200mg BID</text>
+							<effectiveTime xsi:type="PIVL_TS" institutionSpecified="true">
+								<period value="12" unit="h"/>
+							</effectiveTime>
+							<routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration"/>
+							<doseQuantity>
+								<center value="200" unit="mg"/>
+							</doseQuantity>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code code="66493003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Theophylline"/>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</SubstanceAdministration>
+					</entry>
+					<entry>
+						<SubstanceAdministration>
+							<text>Proventil inhaler 2puffs QID PRN</text>
+							<effectiveTime xsi:type="PIVL_TS" institutionSpecified="true">
+								<period value="6" unit="h"/>
+							</effectiveTime>
+							<priorityCode code="PRN"/>
+							<routeCode code="IPINHL" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration" displayName="Inhalation, oral"/>
+							<doseQuantity>
+								<center value="2"/>
+							</doseQuantity>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code code="91143003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Albuterol"/>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</SubstanceAdministration>
+					</entry>
+					<entry>
+						<SubstanceAdministration>
+							<id root="10.23.27.123"/>
+							<text>Prednisone 20mg qd</text>
+							<effectiveTime xsi:type="PIVL_TS" institutionSpecified="true">
+								<period value="24" unit="h"/>
+							</effectiveTime>
+							<routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration"/>
+							<doseQuantity>
+								<center value="20" unit="mg"/>
+							</doseQuantity>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code code="10312003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prednisone preparation"/>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</SubstanceAdministration>
+					</entry>
+					<entry>
+						<SubstanceAdministration>
+							<text>HCTZ 25mg qd</text>
+							<effectiveTime xsi:type="PIVL_TS" institutionSpecified="true">
+								<period value="24" unit="h"/>
+							</effectiveTime>
+							<routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration"/>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code code="376209006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hydrochlorothiazide 25mg tablet"/>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</SubstanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  Allergies & Adverse Reactions section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="10155-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Allergies and Adverse Reactions</title>
+					<text>
+						<list>
+							<item>Penicillin - Hives</item>
+							<item>Aspirin - Wheezing</item>
+							<item>Codeine - Itching and nausea</item>
+						</list>
+					</text>
+					<entry>
+						<Observation>
+							<code code="84100007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="history taking (procedure)"/>
+							<value xsi:type="CD" code="247472004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hives"/>
+							<entryRelationship typeCode="MFST">
+								<Observation>
+									<code code="84100007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="history taking (procedure)"/>
+									<value xsi:type="CD" code="91936005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Allergy to penicillin"/>
+								</Observation>
+							</entryRelationship>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation>
+							<code code="84100007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="history taking (procedure)"/>
+							<value xsi:type="CD" code="56018004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wheezing"/>
+							<entryRelationship typeCode="MFST">
+								<Observation>
+									<code code="84100007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="history taking (procedure)"/>
+									<value xsi:type="CD" code="293586001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Allergy to aspirin"/>
+								</Observation>
+							</entryRelationship>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation>
+							<code code="84100007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="history taking (procedure)"/>
+							<value xsi:type="CD" code="32738000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pruritis"/>
+							<entryRelationship typeCode="MFST">
+								<Observation>
+									<id root="2.16.840.1.113883.3.933.25.47"/>
+									<code code="84100007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="history taking (procedure)"/>
+									<value xsi:type="CD" code="62014003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Adverse reaction to drug">
+										<qualifier>
+											<name code="246075003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="causative agent"/>
+											<value code="1476002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="codeine"/>
+										</qualifier>
+									</value>
+								</Observation>
+							</entryRelationship>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation>
+							<code code="84100007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="history taking (procedure)"/>
+							<value xsi:type="CD" code="73879007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Nausea"/>
+							<entryRelationship typeCode="MFST">
+								<Observation>
+									<id root="2.16.840.1.113883.3.933.25.47"/>
+									<code code="84100007" codeSystem="2.16.840.1.113883.6.96"/>
+								</Observation>
+							</entryRelationship>
+						</Observation>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  Family History section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="10157-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Family history</title>
+					<text>
+						<list>
+							<item>Father had fatal MI in his early 50's.</item>
+							<item>No cancer or diabetes.</item>
+						</list>
+					</text>
+					<entry>
+						<Observation>
+							<code code="84100007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="history taking (procedure)"/>
+							<effectiveTime value="1970"/>
+							<value xsi:type="CD" code="22298006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="MI"/>
+							<subject>
+								<relatedSubject classCode="PRS">
+									<code code="FTH"/>
+								</relatedSubject>
+							</subject>
+							<entryRelationship typeCode="CAUS">
+								<Observation>
+									<code code="84100007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="history taking (procedure)"/>
+									<effectiveTime value="1970"/>
+									<value xsi:type="CD" code="399347008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="death"/>
+								</Observation>
+							</entryRelationship>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation negationInd="true">
+							<code code="84100007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="history taking (procedure)"/>
+							<effectiveTime>
+								<high value="20000407" inclusive="true"/>
+							</effectiveTime>
+							<value xsi:type="CD" code="275937001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Family history of cancer"/>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation>
+							<code code="84100007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="history taking (procedure)"/>
+							<effectiveTime>
+								<high value="20000407" inclusive="true"/>
+							</effectiveTime>
+							<value xsi:type="CD" code="160274005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="No family history of diabetes"/>
+						</Observation>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  Social History section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="29762-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Social History</title>
+					<text>
+						<list>
+							<item>Smoking :: 1 PPD between the ages of 20 and 55, and then he quit.</item>
+							<item>Alcohol :: rare</item>
+						</list>
+					</text>
+					<entry>
+						<Observation>
+							<code code="229819007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Tobacco use and exposure"/>
+							<effectiveTime>
+								<low value="1955"/>
+								<high value="1990"/>
+							</effectiveTime>
+							<value xsi:type="CD" code="266924008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="ex-heavy cigarette smoker (20-39/day)"/>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation>
+							<code code="160625004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Date ceased smoking"/>
+							<value xsi:type="TS" value="1990"/>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation>
+							<code code="160573003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Alcohol intake"/>
+							<value xsi:type="CD" code="266917007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Trivial drinker -  less than 1/day"/>
+						</Observation>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  Physical Exam section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="11384-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Physical Examination</title>
+					<!-- 
+          ********************************************************
+            Physical Exam  - Vital Signs
+          ********************************************************
+          -->
+					<component>
+						<section>
+							<code code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+							<title>Vital Signs</title>
+							<text>
+								<table>
+									<tr>
+										<th>Date / Time</th>
+										<th>April 7, 2000 14:30</th>
+										<th>April 7, 2000 15:30</th>
+									</tr>
+									<tr>
+										<th>Height</th>
+										<td>177 cm (69.7 in)</td>
+									</tr>
+									<tr>
+										<th>Weight</th>
+										<td>194.0 lbs (88.0 kg)</td>
+									</tr>
+									<tr>
+										<th>BMI</th>
+										<td>28.1 kg/m2</td>
+									</tr>
+									<tr>
+										<th>BSA</th>
+										<td>2.05 m2</td>
+									</tr>
+									<tr>
+										<th>Temperature</th>
+										<td>36.9 C (98.5 F)</td>
+										<td>36.9 C (98.5 F)</td>
+									</tr>
+									<tr>
+										<th>Pulse</th>
+										<td>86 / minute</td>
+										<td>84 / minute</td>
+									</tr>
+									<tr>
+										<th>Rhythm</th>
+										<td>Regular</td>
+										<td>Regular</td>
+									</tr>
+									<tr>
+										<th>Respirations</th>
+										<td>16 / minute, unlabored</td>
+										<td>14 / minute</td>
+									</tr>
+									<tr>
+										<th>Systolic</th>
+										<td>132 mmHg</td>
+										<td>135 mmHg</td>
+									</tr>
+									<tr>
+										<th>Diastolic</th>
+										<td>86 mmHg</td>
+										<td>88 mmHg</td>
+									</tr>
+									<tr>
+										<th>Position / Cuff</th>
+										<td>Left Arm</td>
+										<td>Left Arm</td>
+									</tr>
+								</table>
+							</text>
+							<entry>
+								<Observation>
+									<code code="50373000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Body height measure"/>
+									<effectiveTime value="200004071430"/>
+									<value xsi:type="PQ" value="1.77" unit="m">
+										<translation value="69.7" code="[in_I]" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM"/>
+									</value>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation>
+									<code code="363808001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Body weight measure"/>
+									<effectiveTime value="200004071430"/>
+									<value xsi:type="PQ" value="194.0" unit="[lb_ap]">
+										<translation value="88.0" code="kg" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM"/>
+									</value>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation>
+									<code code="60621009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Body mass index"/>
+									<effectiveTime value="200004071430"/>
+									<value xsi:type="RTO_PQ_PQ">
+										<numerator value="28.1" unit="kg"/>
+										<denominator value="1" unit="ar"/>
+									</value>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation>
+									<code code="301898006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Body surface area"/>
+									<effectiveTime value="200004071430"/>
+									<value xsi:type="PQ" value="2.05" unit="ar"/>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation>
+									<code code="386725007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Body temperature"/>
+									<effectiveTime value="200004071430"/>
+									<value xsi:type="PQ" value="36.9" unit="Cel">
+										<translation value="98.5" code="[degF]" codeSystem="2.16.840.1.113883.6.8" codeSystemName="UCUM"/>
+									</value>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation>
+									<code code="364075005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Heart rate"/>
+									<effectiveTime value="200004071430"/>
+									<value xsi:type="RTO_PQ_PQ">
+										<numerator value="86"/>
+										<denominator value="1" unit="min"/>
+									</value>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation>
+									<code code="364075005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Heart rate"/>
+									<effectiveTime value="200004071530"/>
+									<value xsi:type="RTO_PQ_PQ">
+										<numerator value="84"/>
+										<denominator value="1" unit="min"/>
+									</value>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation>
+									<code code="364074009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Regularity of heart rhythm"/>
+									<effectiveTime value="200004071430"/>
+									<value xsi:type="CD" code="248649006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Heart regular"/>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation>
+									<code code="364074009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Regularity of heart rhythm"/>
+									<effectiveTime value="200004071530"/>
+									<value xsi:type="CD" code="248649006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Heart regular"/>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation>
+									<code code="86290005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Respiratory rate"/>
+									<effectiveTime value="200004071430"/>
+									<value xsi:type="RTO_PQ_PQ">
+										<numerator value="16"/>
+										<denominator value="1" unit="min"/>
+									</value>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation>
+									<code code="278907009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Respiratory pattern"/>
+									<effectiveTime value="200004071430"/>
+									<value xsi:type="CD" code="276362002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Breathing easily"/>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation>
+									<code code="86290005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Respiratory rate"/>
+									<effectiveTime value="200004071530"/>
+									<value xsi:type="RTO_PQ_PQ">
+										<numerator value="14"/>
+										<denominator value="1" unit="min"/>
+									</value>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation>
+									<code code="251076008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cuff blood pressure"/>
+									<effectiveTime value="200004071430"/>
+									<targetSiteCode code="368208006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Left arm"/>
+									<entryRelationship typeCode="COMP">
+										<Observation>
+											<code code="271649006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Systolic BP"/>
+											<effectiveTime value="200004071530"/>
+											<value xsi:type="PQ" value="132" unit="mm[Hg]"/>
+										</Observation>
+									</entryRelationship>
+									<entryRelationship typeCode="COMP">
+										<Observation>
+											<code code="271650006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diastolic BP"/>
+											<effectiveTime value="200004071530"/>
+											<value xsi:type="PQ" value="86" unit="mm[Hg]"/>
+										</Observation>
+									</entryRelationship>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation>
+									<code code="251076008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cuff blood pressure"/>
+									<effectiveTime value="200004071530"/>
+									<targetSiteCode code="368208006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Left arm"/>
+									<entryRelationship typeCode="COMP">
+										<Observation>
+											<code code="271649006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Systolic BP"/>
+											<effectiveTime value="200004071530"/>
+											<value xsi:type="PQ" value="135" unit="mm[Hg]"/>
+										</Observation>
+									</entryRelationship>
+									<entryRelationship typeCode="COMP">
+										<Observation>
+											<code code="271650006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diastolic BP"/>
+											<effectiveTime value="200004071530"/>
+											<value xsi:type="PQ" value="88" unit="mm[Hg]"/>
+										</Observation>
+									</entryRelationship>
+								</Observation>
+							</entry>
+						</section>
+					</component>
+					<!-- 
+          ********************************************************
+            Physical Exam  - Skin
+          ********************************************************
+          -->
+					<component>
+						<section>
+							<code code="8709-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+							<title>Skin Exam</title>
+							<text>Erythematous rash, palmar surface, left index finger.
+								 <renderMultiMedia referencedObject="MM1"/>
+							</text>
+							<entry>
+								<Observation>
+									<code code="106076001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Skin finding"/>
+									<value xsi:type="CD" code="271807003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Rash"/>
+									<targetSiteCode code="48856004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Skin of palmer surface of index finger">
+										<qualifier>
+											<name code="78615007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="with laterality"/>
+											<value code="7771000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="left"/>
+										</qualifier>
+									</targetSiteCode>
+									<entryRelationship typeCode="SPRT">
+										<RegionOfInterest MMID="MM1">
+											<id root="10.23.4567.4489"/>
+											<code code="ELLIPSE"/>
+											<value>3 1 3 7 2 4 4 4</value>
+											<entryRelationship typeCode="SUBJ">
+												<ObservationMedia>
+													<id root="10.23.4567.345"/>
+													<value xsi:type="ED" mediaType="image/jpeg">
+														<reference value="lefthand.jpeg"/>
+													</value>
+												</ObservationMedia>
+											</entryRelationship>
+										</RegionOfInterest>
+									</entryRelationship>
+								</Observation>
+							</entry>
+						</section>
+					</component>
+					<!-- 
+          ********************************************************
+            Physical Exam  - Lungs
+          ********************************************************
+          -->
+					<component>
+						<section>
+							<code code="8710-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+							<title>Lungs</title>
+							<text>Clear with no wheeze. Good air flow.</text>
+							<entry>
+								<Observation>
+									<code code="301708006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Respiratory sounds"/>
+									<value xsi:type="CD" code="48348007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chest clear"/>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation negationInd="true">
+									<code code="52653008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Respiratory sounds"/>
+									<value xsi:type="CD" code="56018004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Wheezing"/>
+								</Observation>
+							</entry>
+						</section>
+					</component>
+					<!-- 
+          ********************************************************
+            Physical Exam  - Cardiac
+          ********************************************************
+          -->
+					<component>
+						<section>
+							<code code="10223-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+							<title>Cardiac</title>
+							<text>RRR with no murmur, no S3, no S4.</text>
+							<entry>
+								<Observation>
+									<code code="364066008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiovascular observable"/>
+									<value xsi:type="CD" code="76863003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Normal heart rate"/>
+									<methodCode code="37931006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Auscultation"/>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation negationInd="true">
+									<code code="364066008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiovascular observable"/>
+									<value xsi:type="CD" code="88610006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="heart murmur"/>
+									<methodCode code="37931006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Auscultation"/>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation negationInd="true">
+									<code code="364066008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiovascular observable"/>
+									<value xsi:type="CD" code="277455002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Third heart sound"/>
+									<methodCode code="37931006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Auscultation"/>
+								</Observation>
+							</entry>
+							<entry>
+								<Observation>
+									<code code="364066008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Cardiovascular observable"/>
+									<value xsi:type="CD" code="60721002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Fourth heart sound inaudible"/>
+									<methodCode code="37931006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Auscultation"/>
+								</Observation>
+							</entry>
+						</section>
+					</component>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  Labs section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="11502-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Labs</title>
+					<text>
+						<list>
+							<item>CXR 02/03/1999: Hyperinflated. Normal cardiac silhouette, clear lungs.</item>
+							<item>Peak Flow today: 260 l/m</item>
+						</list>
+					</text>
+					<entry>
+						<Observation>
+							<id root="10.23.4573.15877"/>
+							<code code="282290005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Imaging interpretation"/>
+							<value xsi:type="CD" code="249674001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chest hyperinflated"/>
+							<reference typeCode="SPRT">
+								<ExternalObservation classCode="DGIMG">
+									<id root="123.456.2557"/>
+									<code code="56350004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chest-X-ray"/>
+								</ExternalObservation>
+							</reference>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation>
+							<id root="10.23.4573.15878"/>
+							<code code="282290005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Imaging interpretation"/>
+							<value xsi:type="CD" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" nullFlavor="OTH">
+								<originalText>normal cardiac silhouette</originalText>
+							</value>
+							<reference typeCode="SPRT">
+								<ExternalObservation classCode="DGIMG">
+									<id root="123.456.2557"/>
+									<code code="56350004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chest-X-ray"/>
+								</ExternalObservation>
+							</reference>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation negationInd="true">
+							<id root="10.23.4573.15879"/>
+							<code code="282290005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Imaging interpretation"/>
+							<value xsi:type="CD" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" nullFlavor="OTH">
+								<originalText>radiopacities</originalText>
+							</value>
+							<reference typeCode="SPRT">
+								<ExternalObservation classCode="DGIMG">
+									<id root="123.456.2557"/>
+									<code code="56350004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Chest-X-ray"/>
+								</ExternalObservation>
+							</reference>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation>
+							<id root="10.23.4573.15879"/>
+							<code code="313193002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Peak flow"/>
+							<effectiveTime value="20000407"/>
+							<value xsi:type="RTO_PQ_PQ">
+								<numerator value="260" unit="l"/>
+								<denominator value="1" unit="min"/>
+							</value>
+						</Observation>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  In-office Procedure section
+********************************************************
+-->
+			<component>
+				<section>
+					<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" nullFlavor="OTH"/>
+					<title>In-office Procedures</title>
+					<text>
+						<list>
+							<item>Suture removal, left forearm.</item>
+						</list>
+					</text>
+					<entry>
+						<Procedure>
+							<code code="30549001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Suture removal"/>
+							<effectiveTime value="200004071430"/>
+							<targetSiteCode code="66480008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Left forearm"/>
+						</Procedure>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  Assessment section
+********************************************************
+-->
+			<component>
+				<section>
+					<code code="11496-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Assessment</title>
+					<text>
+						<list>
+							<item>Asthma, with prior smoking history. Difficulty weaning off steroids. Will try gradual taper.</item>
+							<item>Hypertension, well-controlled.</item>
+							<item>Contact dermatitis on finger.</item>
+						</list>
+					</text>
+					<entry>
+						<Observation classCode="COND">
+							<code code="14657009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Established diagnosis"/>
+							<effectiveTime value="200004071530"/>
+							<value xsi:type="CD" code="195967001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Asthma">
+								<translation code="49390" codeSystem="2.16.840.1.113883.6.2" codeSystemName="ICD9CM" displayName="ASTHMA W/O STATUS ASTHMATICUS"/>
+							</value>
+							<reference typeCode="ELNK">
+								<ExternalObservation classCode="COND">
+									<id root="10.23.27.111.17"/>
+									<code code="14657009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Established diagnosis"/>
+								</ExternalObservation>
+							</reference>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation classCode="COND">
+							<code code="14657009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Established diagnosis"/>
+							<effectiveTime value="200004071530"/>
+							<value xsi:type="CD" code="59621000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Essential hypertension">
+								<translation code="4019" codeSystem="2.16.840.1.113883.6.2" codeSystemName="ICD9CM" displayName="HYPERTENSION NOS"/>
+							</value>
+							<reference typeCode="ELNK">
+								<ExternalObservation classCode="COND">
+									<id root="10.23.27.111.1732"/>
+									<code code="14657009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Established diagnosis"/>
+								</ExternalObservation>
+							</reference>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation classCode="COND">
+							<code code="14657009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Established diagnosis"/>
+							<effectiveTime value="200004071530"/>
+							<value xsi:type="CD" code="40275004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Contact dermatitis">
+								<translation code="692.9" codeSystem="2.16.840.1.113883.6.2" codeSystemName="ICD9CM" displayName="Contact Dermatitis, NOS"/>
+							</value>
+							<targetSiteCode code="48856004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Skin of palmer surface of index finger">
+								<qualifier>
+									<name code="78615007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="with laterality"/>
+									<value code="7771000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="left"/>
+								</qualifier>
+							</targetSiteCode>
+						</Observation>
+					</entry>
+				</section>
+			</component>
+			<!-- 
+********************************************************
+  Plan section
+********************************************************
+-->
+			<component>
+				<section templateId="2.16.840.1.113883.3.27.354">
+					<code code="1150x-y" codeSystem="2.16.840.1.113883.3.933.278.47" codeSystemName="MyLocalCodeSystem"/>
+					<title>Plan</title>
+					<text>
+						<list>
+							<item>Complete PFTs with lung volumes.</item>
+							<item>Chem-7 tomorrow.</item>
+							<item>Teach peak flow rate measurement.</item>
+							<item>Decrease prednisone to 20qOD alternating with 18qOD.</item>
+							<item>Hydrocortisone cream to finger BID.</item>
+							<item>RTC 1 week.</item>
+						</list>
+					</text>
+					<entry>
+						<Observation moodCode="INT">
+							<id/>
+							<code code="23426006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulmonary function test"/>
+							<text>Complete PFTs with lung volumes.</text>
+							<entryRelationship typeCode="COMP">
+								<Observation moodCode="INT">
+									<code code="252472004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Lung volume test"/>
+								</Observation>
+							</entryRelationship>
+						</Observation>
+					</entry>
+					<entry>
+						<Observation moodCode="INT">
+							<code code="24320-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+								<originalText>Chem-7</originalText>
+								<translation code="aYU7t6" codeSystem="2.16.840.1.113883.3.933.278.47" codeSystemName="MyLocalCodeSystem" displayName="Chem7"/>
+							</code>
+							<text>Chem-7 tomorrow</text>
+							<effectiveTime value="20000408"/>
+						</Observation>
+					</entry>
+					<entry>
+						<Act moodCode="INT">
+							<id/>
+							<code code="223468009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Teaching of skills">
+								<qualifier>
+									<name code="363702006" displayName="has focus"/>
+									<value code="29893006" displayName="Peak flow rate measurement"/>
+								</qualifier>
+							</code>
+						</Act>
+					</entry>
+					<entry>
+						<SubstanceAdministration moodCode="RQO">
+							<text>prednisone 20qOD alternating with 18qOD.</text>
+							<routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration"/>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code code="10312003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prednisone preparation"/>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</SubstanceAdministration>
+					</entry>
+					<entry>
+						<SubstanceAdministration moodCode="RQO">
+							<text>Hydrocortisone cream to finger BID.</text>
+							<effectiveTime xsi:type="PIVL_TS" institutionSpecified="true">
+								<period value="12" unit="h"/>
+							</effectiveTime>
+							<routeCode code="SKIN" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration" displayName="Topical application, skin"/>
+							<approachSiteCode code="48856004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Skin of palmer surface of index finger">
+								<qualifier>
+									<name code="78615007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="with laterality"/>
+									<value code="7771000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="left"/>
+								</qualifier>
+							</approachSiteCode>
+							<consumable>
+								<manufacturedProduct>
+									<manufacturedLabeledDrug>
+										<code code="331646005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Hydrocortisone cream"/>
+									</manufacturedLabeledDrug>
+								</manufacturedProduct>
+							</consumable>
+						</SubstanceAdministration>
+					</entry>
+					<entry>
+						<Encounter moodCode="RQO">
+							<code code="185389009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Follow-up visit"/>
+							<effectiveTime>
+								<low value="20000412"/>
+								<high value="20000417"/>
+							</effectiveTime>
+						</Encounter>
+					</entry>
+				</section>
+			</component>
+		</StructuredBody>
+	</component>
+</ClinicalDocument>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Intelligent Software and Systems">
+
+	<title>HL7 C-CDA Viewer (Intelsoft)</title>
+
+			<script src="js/core.js"></script>
+    		
+			<link rel="stylesheet" type="text/css" media="all" href="css/font-awesome.css" />
+			<link rel="stylesheet" type="text/css" media="all" href="css/cda.css" />
+			<link rel="stylesheet" type="text/css" media="all" href="css/pure-min.css" />
+
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.css">
+	<link rel="stylesheet" href="css/pureextension.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/marketing-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="css/marketing.css">
+    <!--<![endif]-->
+
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>window.jQuery || document.write('&lt;script src="js/jquery-1.12.0.min.js">\x3C/script>')</script>
+
+	<script src="js/packery.pkgd.min.js"></script>
+	<script src="js/draggabilly.pkgd.min.js"></script>
+	<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/masonry.pkgd.min.js">\x3C/script>')</script>
+	-->
+	
+	<script src="js/xslt/xslt.js"></script>
+	<script src="js/core.js"></script>
+	
+	
+</head>
+<body>
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+<!--<![endif]-->
+
+	<div class="custom-wrapper pure-g home-menu pure-menu pure-menu-fixed" style="width:100%" id="men">
+		<div class="pure-u-1">
+			<span class="pure-button viewbtn" id="inputcdabtn" id_target="inputcda" style="float:right;display:block"><i class="fa fa-lg fa-file-code-o"></i> Input CDA Document</span>
+			<a href="home.htm" class="" style="float:left;font-weight:bold;font-size:1.75em;;padding-top:0.2em;padding-bottom:0.5em;text-decoration:none">HL7 C-CDA Viewer</a>
+		</div>
+	</div>
+
+	<div class="content-wrapper" id="content-wrapper" style="top:auto">
+		<div class="pure-g"  style="margin-top:3em">
+			<div class="pure-u-1">
+
+				<div class=" cdaview"  id="inputcda" style="padding:1em;">
+					<div style="margin:0.5em">
+						<span id="transform" class="pure-button transform">View <i class="fa fa-angle-double-right"></i></span>
+						<p style="">Paste your C-CDA document below<p>
+					</div>
+					<textarea id="cdaxml" style="width:95%;height:20em;padding:0.25em;"
+placeholder="Your C-CDA document goes here:
+<ClinicalDocument xmlns=&quot;urn:hl7-org:v3&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:sdtc=&quot;urn:hl7-org:sdtc&quot; xmlns:cda=&quot;urn:hl7-org:v3&quot;>"
+					></textarea>
+					<p>Sample CDA documents</p>
+					<div style="width:35em;font-size:80%">
+						<span id="" style="width:100%;text-align:left" file="./samples/Final_Task_Force_Full_Sample_R1.1.xml" class="pure-button transform">Summary of Care (Final_Task_Force_Full_Sample_R1.1.xml) <i class="fa fa-angle-double-right"></i></span>
+						<span id="" style="width:100%;text-align:left" file="./samples/R2.xml" class="pure-button transform">Patient Chart Summary (C-CDA_R2-1_CCD.xml) <i class="fa fa-angle-double-right"></i></span>
+						<span id="" style="width:100%;text-align:left" file="./samples/C-CDA_R2_Care_Plan.xml" class="pure-button transform">Care Plan (C-CDA_R2_Care_Plan.xml) <i class="fa fa-angle-double-right"></i></span>
+						<span id="" style="width:100%;text-align:left" file="./samples/Sample-p2.xml" class="pure-button transform">Outpatient Summary (Sample-p2.xml) <i class="fa fa-angle-double-right"></i></span>
+					</div>
+				</div>
+				<div class=" cdaview"  id="viewcda">
+					<p><p>
+				</div>
+				<div class="">
+					<a href="http://intelsoft.com.au" class="intelsoft" style="">
+						<i class="fa fa-rocket"></i> Made by Intelsoft
+					</a>
+				</div>
+				
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+<script src="js/purejs.js"></script>
+<!--
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-12087087-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	-->
+</body>
+</html>

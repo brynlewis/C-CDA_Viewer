@@ -22,7 +22,7 @@ Users can hide, collapse and move any section of a CDA document.
 
 <h2>Demonstration</h2>
 A demonstration version is deployed here:
-http://intelsoft.com.au/challenge/index.htm
+http://intelsoft.com.au/C-CDA_Viewer/index.htm
 
 <h2>Features</h2>
 <ul>

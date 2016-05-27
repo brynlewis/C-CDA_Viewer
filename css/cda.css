@@ -1,0 +1,229 @@
+*{
+box-sizing: border-box;
+}
+html{
+  margin:0;
+}
+body {
+  color: #003366;
+  
+  font-family: Verdana, Tahoma, sans-serif;
+  font-family: "Open Sans",Arial, "Trebuchet MS";
+
+  font-size: 80%;
+  margin:0;
+  background:#EEEEEE;
+  background-color: #E3F4FF;
+}
+table{
+	font-family: Verdana, Tahoma, sans-serif;
+	font-family: "Open Sans",Arial, "Trebuchet MS";
+
+}
+div{
+	font-family: "Open Sans",Arial, "Trebuchet MS";
+}
+a {
+  color: #003366;
+  background-color: #FFFFFF;
+}
+p.h1{
+	font-size:1.5em;
+	font-weight: bold;
+}
+p.secth3 {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin:0;
+  padding:0;
+	color:#1f8dd6;
+	white-space:nowrap;
+	overflow:hidden;
+}
+div.sectiontext{
+	margin-top:0.5em;
+	clear:both;
+}
+#tocdiv .pure-button{
+	font-size:80%;
+	margin-right:2px;
+}
+h4 {
+  font-size: 1em;
+  font-weight: bold;
+}
+div {
+
+}
+table {
+	line-height: 10pt;
+	border-collapse:collapse;
+}
+tr {
+  background-color: #ccccff;
+}
+#viewcda td,th,th.narr_th{
+  padding: 0.25em;
+  vertical-align: top;
+  border:1px solid white;
+}
+/*Turn on for table sorting
+th.narr_th{
+	cursor:ns-resize;
+}
+th.narr_th:hover{
+	cursor:ns-resize;
+	border:1px solid #E3F4FF;
+	background:#E3F4FF;
+}
+*/
+.h1center {
+  font-weight: bold;
+  text-align: center;
+}
+.header_table{
+  border: 1pt inset #00008b;
+}
+.narr_table {
+
+}
+.narr_tr {
+  background-color: #ffffcc;
+}
+.narr_th {
+  background-color: #ffd700;
+}
+.td_label{
+  font-weight: bold;
+  color: white;
+}
+
+div.section{
+	border:1px solid #BFE6FF;
+	display:inline-block;
+	/*width:30em;*/
+	margin:0;
+	background:white;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+	cursor:move;
+}
+div.recordTarget{
+	cursor:default;
+}
+div.section.is-dragging,
+div.section.is-positioning-post-drag {
+  background: #C90;
+  z-index: 2;
+}
+
+@media (min-width:400px){
+	.section{
+		width:99%;
+	}
+}
+@media (min-width:600px){
+	.section{
+		width:48%;
+	}
+}
+@media (min-width:1000px){
+	.section{
+		width:30em;
+	}
+}
+
+.packery-drop-placeholder {
+	background:white;
+  outline: 3px dashed hsla(0, 0%, 0%, 0.5);
+  outline-offset: -6px;
+  -webkit-transition: -webkit-transform 0.2s;
+          transition: transform 0.2s;
+}
+div.section_in{
+	padding:2px;
+	border:3px solid transparent;
+}
+div.section_in:hover,div.sectionhover{
+	border:3px solid #BFE6FF;
+}
+div.controls{
+	float:right;
+	clear:right;
+	cursor:pointer;
+	display:none;
+}
+i.btn{
+	border-radius:0.25em;
+	padding:0.2em;
+	border: 1px solid #BFE6FF;
+	width:1.5em;
+}
+.tocul {
+    padding-left: 0;
+	margin:0;
+    margin-left: 0.5em;
+    list-style-type: none;
+	padding-right:0.5em;
+}
+.toc{
+	margin-bottom:0.25em;
+	overflow:hidden;
+	text-align:left;
+}
+.hide{
+}
+#tocdiv{
+	float:right;
+	clear:right;
+	border-right:none;
+	background:#BFE6FF;
+}
+div.fadehighlight{
+	border:1px solid red;
+	border:3px solid #BFE6FF;
+	font-weight:bold;
+	z-index:1;
+	background:#BFE6FF;
+}
+.tocX .fa-arrow-up{
+	float:right;
+}
+/*border: 1px solid #1f8dd6;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 1px rgba(100, 100, 100, 0.3);*/
+span.tocup,span.tocdown{
+	padding:0.5em;
+}
+.intelsoft{
+	display:block;width:100%;padding-left:1em;float:left;font-weight:bold;
+	color:#1f8dd6;
+	font-size:1em;padding-top:0.2em;padding-bottom:0.5em;text-decoration:none;
+	background:white;
+	border-top:2px solid transparent;
+	margin-top:0.5em;
+}
+.intelsoft:hover{
+	border-top:2px solid #1f8dd6;
+}
+.intelsoft:hover::after{
+	content:' http://intelsoft.com.au ';
+	float:right;
+	padding-right:1em;
+}
+#cdabody{
+	padding-left:0.5em;
+}
+i.thumb{
+	float:left;padding:0.25em;margin-top:-0.4em;margin-left:-0.4em;background:white;margin-right:0.25em;font-size:1.5em;border-radius:10px;
+	border-top:2px solid #BFE6FF;border-left:2px solid #BFE6FF;color:#1f8dd6;
+}
+tr.duplicatefirst{
+	background:#eee;
+}
+tr.duplicate{
+	background:white;
+	display:none;
+}
+textarea{
+	border:1px solid #999;
+}
+}
