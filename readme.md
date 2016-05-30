@@ -1,4 +1,4 @@
-<h1>HL7 C-CDA Viewer: (Intelsoft)</h1>
+<h1>HL7 C-CDA Viewer</h1>
 
 <h2>Synopsis</h2>
 Easy to use rendering of complex C-CDA documents directly in any web browser.
@@ -22,7 +22,7 @@ Users can hide, collapse and move any section of a CDA document.
 
 <h2>Demonstration</h2>
 A demonstration version is deployed here:
-http://intelsoft.com.au/C-CDA_Viewer/index.htm
+http://intelsoft.com.au/challenge/index.htm
 
 <h2>Features</h2>
 <ul>
