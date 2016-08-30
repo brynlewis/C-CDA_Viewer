@@ -21,7 +21,7 @@ table{
 
 }
 div{
-	font-family: "Open Sans",Arial, "Trebuchet MS";
+	font-family: Segoe UI,"Open Sans",Arial, "Trebuchet MS";
 }
 a {
   color: #003366;
@@ -225,5 +225,4 @@ tr.duplicate{
 }
 textarea{
 	border:1px solid #999;
-}
 }

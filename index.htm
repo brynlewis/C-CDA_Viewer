@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,9 +7,14 @@
 
 	<title>HL7 C-CDA Viewer (Intelsoft)</title>
 
-			<script src="js/core.js"></script>
+	<script src="js/jquery-1.12.0.min.js"></script>	
+	<!--
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>window.jQuery || document.write('&lt;script src="js/jquery-1.12.0.min.js">\x3C/script>')</script>
+	-->
+	<script src="js/core.js"></script>
     		
-			<link rel="stylesheet" type="text/css" media="all" href="css/font-awesome.css" />
+			<!--<link rel="stylesheet" type="text/css" media="all" href="css/font-awesome.css" />-->
 			<link rel="stylesheet" type="text/css" media="all" href="css/cda.css" />
 			<link rel="stylesheet" type="text/css" media="all" href="css/pure-min.css" />
 
@@ -22,8 +27,6 @@
         <link rel="stylesheet" href="css/marketing.css">
     <!--<![endif]-->
 
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-	<script>window.jQuery || document.write('&lt;script src="js/jquery-1.12.0.min.js">\x3C/script>')</script>
 
 	<script src="js/packery.pkgd.min.js"></script>
 	<script src="js/draggabilly.pkgd.min.js"></script>
@@ -47,6 +50,7 @@
 
 	<div class="custom-wrapper pure-g home-menu pure-menu pure-menu-fixed" style="width:100%" id="men">
 		<div class="pure-u-1">
+			
 			<span class="pure-button viewbtn" id="inputcdabtn" id_target="inputcda" style="float:right;display:block"><i class="fa fa-lg fa-file-code-o"></i> Input CDA Document</span>
 			<a href="home.htm" class="" style="float:left;font-weight:bold;font-size:1.75em;;padding-top:0.2em;padding-bottom:0.5em;text-decoration:none">HL7 C-CDA Viewer</a>
 		</div>
@@ -65,13 +69,29 @@
 placeholder="Your C-CDA document goes here:
 <ClinicalDocument xmlns=&quot;urn:hl7-org:v3&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:sdtc=&quot;urn:hl7-org:sdtc&quot; xmlns:cda=&quot;urn:hl7-org:v3&quot;>"
 					></textarea>
-					<p>Sample CDA documents</p>
-					<div style="width:35em;font-size:80%">
-						<span id="" style="width:100%;text-align:left" file="./samples/Final_Task_Force_Full_Sample_R1.1.xml" class="pure-button transform">Summary of Care (Final_Task_Force_Full_Sample_R1.1.xml) <i class="fa fa-angle-double-right"></i></span>
-						<span id="" style="width:100%;text-align:left" file="./samples/R2.xml" class="pure-button transform">Patient Chart Summary (C-CDA_R2-1_CCD.xml) <i class="fa fa-angle-double-right"></i></span>
-						<span id="" style="width:100%;text-align:left" file="./samples/C-CDA_R2_Care_Plan.xml" class="pure-button transform">Care Plan (C-CDA_R2_Care_Plan.xml) <i class="fa fa-angle-double-right"></i></span>
-						<span id="" style="width:100%;text-align:left" file="./samples/Sample-p2.xml" class="pure-button transform">Outpatient Summary (Sample-p2.xml) <i class="fa fa-angle-double-right"></i></span>
+					<p>Sample CDA documents are listed below.</p>
+					<div style="width:45em;font-size:90%">
+						<span style="width:75%;text-align:left" file="./samples/Final_Task_Force_Full_Sample_R1.1.xml" class="pure-button transform">
+							Summary of Care (Final_Task_Force_Full_Sample_R1.1.xml) <i class="fa fa-angle-double-right"></i>
+						</span>
+						<span onclick="loadtextarea('./samples/Final_Task_Force_Full_Sample_R1.1.xml')" class="pure-button">Show XML</span>
+						
+						<span style="width:75%;text-align:left" file="./samples/R2.xml" class="pure-button transform">Patient Chart Summary (C-CDA_R2-1_CCD.xml) <i class="fa fa-angle-double-right"></i></span>
+						<span onclick="loadtextarea('./samples/R2.xml')" class="pure-button">Show XML</span>
+
+						<span style="width:75%;text-align:left" file="./samples/C-CDA_R2_Care_Plan.xml" class="pure-button transform">Care Plan (C-CDA_R2_Care_Plan.xml) <i class="fa fa-angle-double-right"></i></span>
+						<span onclick="loadtextarea('./samples/C-CDA_R2_Care_Plan.xml')" class="pure-button">Show XML</span>
+
+						<span style="width:75%;text-align:left" file="./samples/Sample-p1.xml" class="pure-button transform">Dismissal Summary (Sample-p1.xml) <i class="fa fa-angle-double-right"></i></span>
+						<span onclick="loadtextarea('./samples/Sample-p1.xml')" class="pure-button">Show XML</span>
+
+						<span style="width:75%;text-align:left" file="./samples/Sample-p2.xml" class="pure-button transform">Outpatient Summary (Sample-p2.xml) <i class="fa fa-angle-double-right"></i></span>
+						<span onclick="loadtextarea('./samples/Sample-p2.xml')" class="pure-button">Show XML</span>
 					</div>
+					<p>Click 'Show XML' to insert the XML into the box above, then click 'View' (above) to see this XML in the viewer.</p>
+					<p>Click each document to show the CDA document in the viewer.</p>
+					<p>After viewing, click 'Input CDA Document' (top right), to return to this input screen.</p>
+					<p>Note that performance has not been optimised for viewing from a web server, as it was not a condition of the challenge. Local deployments of the fileset will perform more responsive rendering.</p>
 				</div>
 				<div class=" cdaview"  id="viewcda">
 					<p><p>
@@ -80,6 +100,7 @@ placeholder="Your C-CDA document goes here:
 					<a href="http://intelsoft.com.au" class="intelsoft" style="">
 						<i class="fa fa-rocket"></i> Made by Intelsoft
 					</a>
+					<span id="storagemsg"></span>
 				</div>
 				
 			</div>

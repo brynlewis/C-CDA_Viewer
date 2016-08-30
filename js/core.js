@@ -2,6 +2,7 @@ var cdaxml='';
 var hidden=new Array();
 var firstsection=new Array();
 var sectionorder=[];
+var collapseall;
 //localStorage.setItem("hidden", hidden);
 
 $(document).ready(function(){
@@ -14,7 +15,6 @@ $(document).ready(function(){
 	
 })
 function init(){
-
 	sectionorder=[];
 	$('li.toc[data-code]').each(function(){
 		sectionorder.push($(this).attr('data-code'))
@@ -228,12 +228,12 @@ function init(){
 		//jquery $('#viewcda').xslt(cdaxml, './cda.xsl');
 		
 		new Transformation().setXml(cdaxml).setXslt('cda.xsl').transform("viewcda");
-		$('#inputcda').hide(function(){
-			$('#viewcda').show(function(){
-				init()
-				$('#inputcdabtn').show()
-			})
-		})
+		//$('#inputcda').hide(function(){
+			//$('#viewcda').show(function(){
+				//init()
+				//$('#inputcdabtn').show()
+			//})
+		//})
 	})
 	$('i.delete').click(function(){
 		var section=$(this).closest('div.section')
@@ -250,28 +250,27 @@ function init(){
 	})
 
 
-	collapseall=localStorage.collapseall
-	//alert(collapseall)
-	if((collapseall==undefined)||(collapseall=='false')){
-		$('div.sectiontext').show(function(){
-			//adjustWidth($(this).parent().parent())
-		})
-		$('.hideshow').find('i').addClass('fa-compress').removeClass('fa-expand')
-		$('.minimise').addClass('fa-compress').removeClass('fa-expand')
-	}
-	else{
-		$('div.sectiontext').hide(function(){
-			//alert('asdf')
-			adjustWidth($(this).parent().parent())
-		})			
-		$('.hideshow').find('i').addClass('fa-expand').removeClass('fa-compress')
-
-		//$('.minimise').toggleClass('fa-compress fa-expand')
-	}
-	//$('.hideshow').find('i').toggleClass('fa-compress fa-expand')
-	//$('.minimise').toggleClass('fa-compress fa-expand')
 	
-	if(typeof(Storage) !== "undefined") {
+	if((typeof(Storage) !== "undefined")&&(localStorage!=undefined)) {
+		collapseall=localStorage.collapseall
+		//alert(collapseall)
+		if((collapseall==undefined)||(collapseall=='false')){
+			$('div.sectiontext').show(function(){
+				//adjustWidth($(this).parent().parent())
+			})
+			$('.hideshow').find('i').addClass('fa-compress').removeClass('fa-expand')
+			$('.minimise').addClass('fa-compress').removeClass('fa-expand')
+		}
+		else{
+			$('div.sectiontext').hide(function(){
+				//alert('asdf')
+				adjustWidth($(this).parent().parent())
+			})			
+			$('.hideshow').find('i').addClass('fa-expand').removeClass('fa-compress')
+
+			//$('.minimise').toggleClass('fa-compress fa-expand')
+		}
+
 		if(typeof(localStorage.hidden)!='undefined'){
 			hidden=localStorage.hidden.split(',')
 			var ihid=0;
@@ -311,7 +310,7 @@ function init(){
 		var d=new Date();
 		localStorage.setItem("lastaccess", d.getDate()+" "+d.getMonth()+" "+d.getFullYear());
 	} else {
-		alert('Your browser does not have localStorage - your preferences will not be saved')
+		$('#storagemsg').text('Your browser does not have localStorage - your preferences will not be saved')
 	}
 
 
@@ -412,3 +411,21 @@ function comparer(index) {
     }
 }
 function getCellValue(row, index){ return $(row).children('td').eq(index).html() }
+
+var xmload;
+function loadtextarea(fname){
+	xmload = new XMLHttpRequest();
+	xmload.onreadystatechange = loaded;
+	try{
+		xmload.open("GET", fname,true);
+	}
+	catch(e){alert(e)}
+	xmload.send(null);
+}
+var loaded = function() {
+	if (xmload.readyState == 4) {
+		$('#cdaxml').val(xmload.responseText)
+		//$('#transform').get(0).click()
+	}
+}
+ 
