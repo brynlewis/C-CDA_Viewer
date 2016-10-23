@@ -28,7 +28,7 @@
  * Changes made 2016:
  * Copyright (c) 2016 Bryn Lewis (<mailto:brynlewis@intelsoft.com.au>)
  * Updates made to allow usage in Internet Explorer 11.
- * Adapted to load C-CDA sections in viewer
+ * Adapted to load C-CDA secitons in viewer
  */
 
 /**
@@ -183,16 +183,13 @@ function Transformation() {
 		
         if (isIE) {
             var change = function() {
-                //var c = 4; // 'complete';
-                //if (xm.readyState == c && xs.readyState == c) {
-                    //window.setTimeout(function() {
+                var c = 4; // 'complete';
+                if (xm.readyState == c && xs.readyState == c) {
+                    window.setTimeout(function() {
 
 						var source = new ActiveXObject("Msxml2.DOMDocument.3.0");
 						source.async = false;
-						if(str.test(xml))
-							source.loadXML(xml)
-						else
-							source.load(xml)
+						source.load(xml);
 						var stylesheet = new ActiveXObject("Msxml2.DOMDocument.3.0");
 						stylesheet.async = false
 						stylesheet.load("cda.xsl");
@@ -201,8 +198,8 @@ function Transformation() {
                         //document.all[target].innerHTML = xmlDoc.transformNode(xs.responseXML);
                         callback(t);
 						
-                    //}, 50);
-                //}
+                    }, 50);
+                }
             };
             /*
             var xm = document.createElement('xml');
@@ -222,7 +219,12 @@ function Transformation() {
         else {
             var change = function() {
                 if (xm.readyState == 4 && xs.readyState == 4 && !transformed) {
-                    xmlDoc = xm.responseXML;
+					if(xm.responseXML!=null)
+						xmlDoc = xm.responseXML
+					else{
+						var parser = new DOMParser();
+						var xmlDoc = parser.parseFromString(xm.responseText, "application/xml");
+					}
                     xsltDoc = xs.responseXML;
                     var resultDoc;
                     var processor = new XSLTProcessor();
@@ -238,7 +240,8 @@ function Transformation() {
                     }
                     else {
                         processor.importStylesheet(xs.responseXML);
-                        resultDoc = processor.transformToFragment(xm.responseXML, document);
+                        //resultDoc = processor.transformToFragment(xm.responseXML, document);
+                        resultDoc = processor.transformToFragment(xmlDoc, document);
                         //callback(t);
                         document.getElementById(target).innerHTML = '';
                         document.getElementById(target).appendChild(resultDoc);
@@ -253,40 +256,38 @@ function Transformation() {
 
         }
 
-        if (isIE) {
-			change()
+		if (str.test(xml)) {
+			xm.responseXML = new DOMParser().parseFromString(xml, "text/xml");
+			if($(xm.responseXML.documentElement).text().indexOf('XML Parsing Error')>-1){
+				alert($(xm.responseXML.documentElement).text())
+			}
+			if($(xm.responseXML.documentElement).text().indexOf('This page contains the following errors:')>-1){
+				alert($(xm.responseXML.documentElement).text())
+			}
 		}
-		else{
-			if (str.test(xml)) {
-				xm.responseXML = new DOMParser().parseFromString(xml, "text/xml");
-				if($(xm.responseXML.documentElement).text().indexOf('XML Parsing Error')>-1){
-					alert($(xm.responseXML.documentElement).text())
-				}
-				if($(xm.responseXML.documentElement).text().indexOf('This page contains the following errors:')>-1){
-					alert($(xm.responseXML.documentElement).text())
-				}
+		else {
+			xm = new XMLHttpRequest();
+			xm.onreadystatechange = change;
+			try{
+				xm.open("GET", xml,true);
+				//xm.overrideMimeType('text/xml');
+				//xm.setRequestHeader('Content-Type', 'text/xml');
+			
 			}
-			else {
-				xm = new XMLHttpRequest();
-				xm.onreadystatechange = change;
-				try{
-					xm.open("GET", xml,true);
-				}
-				catch(e){alert(e)}
-				xm.send(null);
-			}
+			catch(e){alert(e)}
+			xm.send(null);
+		}
 
-			//if (str.test(xslt)) {
-			//	xs.responseXML = new DOMParser().parseFromString(xslt, "text/xml");
-			//	change();
-			//}
-			//else {
-				xs = new XMLHttpRequest();
-				xs.onreadystatechange = change;
-				xs.open("GET", xslt);
-				xs.send(null);
-				//change();
-			//}
+		if (str.test(xslt)) {
+			xs.responseXML = new DOMParser().parseFromString(xslt, "text/xml");
+			change();
+		}
+		else {
+			xs = new XMLHttpRequest();
+			xs.onreadystatechange = change;
+			xs.open("GET", xslt);
+			xs.send(null);
+			//change();
 		}
 
 	}
@@ -300,7 +301,7 @@ function Transformation() {
  * @type boolean
  */
 function browserSupportsXSLT() {
-    var support = true;
+    var support = false;
     //if (document.recalc) { // IE 5+
     if (isIE) { // IE 5+
         support = true;

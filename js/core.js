@@ -12,8 +12,82 @@ $(document).ready(function(){
 		$('#'+id_target).show()
 	})
 	init()
-	
+	init()
+	$('#ghrepos').click(function(){
+		ghowner=$('#ghowner').val()
+		var url='https://api.github.com/users/'+ghowner+'/repos?sort=asc';
+		$.get( url, function( data ) {
+			loadrepos(data)
+		});
+	})
+	$('#ghsearch').click(function(){
+		s=$('#ghowner').val()
+		var url='https://api.github.com/search/repositories?q='+s+'&sort=stars&order=desc';
+		$.get( url, function( data ) {
+			loadrepos(data)
+		});
+	})
+
+	$('#fileInput').change(function(){
+        startProcessing($("#fileInput"), populateResults, populateError, populateProgress);		
+	})
 })
+function loadrepos(xhr){
+	var ojson=xhr;
+	if(xhr.items!==undefined)
+		ojson=xhr.items
+	else
+		ojson=xhr
+	var s='';
+	for(var i=0,j=ojson.length; i<j; i++){
+		o=ojson[i]
+		s=s+'<p class="pure-button loadrepo" owner="'+o.owner.login+'" path="" title="'+o['description']+'" reponame="'+o['name']+'">'+o['name']+'</p>'
+	}
+	$('#github').html(s);
+
+	$('#github').find('.loadrepo').click(function(){
+		var reponame=$(this).attr('reponame')
+		var owner=$(this).attr('owner')
+		var url='https://api.github.com/repos/'+owner+'/'+reponame+'/contents'
+		$.get(url,function(data){loadcontents(data,reponame,owner,'')})	
+			.fail(function(){alert('Error - failed to retrieve data.')})
+	})
+}
+function loadcontents(data,reponame,owner,path){
+	var ojson=data;
+	var s='';
+	if(path.indexOf('/')!=-1){
+		path=path.substring(0,path.indexOf('/'))
+	}
+	else
+		path=''
+		s=s+'<p class="pure-button loadrepo" path="'+path+'" owner="'+owner+'" reponame="'+reponame+'">..<i class="fa fa-level-up" /></p>'
+	for(var i=0,j=ojson.length; i<j; i++){
+		o=ojson[i]
+		if((o['type']=='file')&&(o['name'].indexOf('.xml')>0))
+			s=s+'<p class="pure-button transform" file="'+o['download_url']+'"><i class="fa fa-angle-double-right"></i>'+o['name']+'</p>'
+		else if (o['type']=='dir'){
+			s=s+'<p class="pure-button loadrepo" path="'+o['path']+'" owner="'+owner+'" reponame="'+reponame+'"><i class="fa fa-folder" /> '+o['name']+'</p>'
+		}
+	}
+	$('#github').html(s);
+
+	$('#github').find('.loadrepo').click(function(){
+		var url='https://api.github.com/repos/'+$(this).attr('owner')+'/'+$(this).attr('reponame')+'/contents/'+$(this).attr('path')
+		var reponame=$(this).attr('reponame')
+		var owner=$(this).attr('owner')
+		var path=$(this).attr('path')
+		$.get(url,function(data){loadcontents(data,reponame,owner,path)})	
+			.fail(function(){alert('Error - failed to retrieve data.')})
+	})
+	$('#github').find('.transform').off('click').click(function(){
+		$('#viewcda').html('')
+		if($(this).attr('file')!=undefined){
+			cdaxml=$(this).attr('file')
+		}
+		new Transformation().setXml(cdaxml).setXslt('cda.xsl').transform("viewcda");
+	})
+}
 function init(){
 	sectionorder=[];
 	$('li.toc[data-code]').each(function(){

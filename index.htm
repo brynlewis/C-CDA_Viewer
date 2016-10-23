@@ -62,7 +62,12 @@
 
 				<div class=" cdaview"  id="inputcda" style="padding:1em;">
 					<div style="margin:0.5em">
-						<span id="transform" class="pure-button transform">View <i class="fa fa-angle-double-right"></i></span>
+						<p>Enter a Github username to lookup a Repository of CDA examples:</p>
+						<span id="ghsearch" class="pure-button"><i class="fa fa-github"></i> Search Github</span> 
+						<span id="ghrepos" class="pure-button"><i class="fa fa-github"></i> Lookup Github</span> 
+						Github Username <input id="ghowner" placeholder="Github Username" value="C-CDA" type="text" />
+											<div id="github"></div>
+						<p id="transform" class="pure-button transform">View <i class="fa fa-angle-double-right"></i></p>
 						<p style="">Paste your C-CDA document below<p>
 					</div>
 					<textarea id="cdaxml" style="width:95%;height:20em;padding:0.25em;"
