@@ -193,9 +193,11 @@ function init(){
 		var draggie = new Draggabilly( gridItem );
 		// bind drag events to Packery
 		cdabody.packery( 'bindDraggabillyEvents', draggie );
-	});
+	})
 
-	//cdabody.on( 'dragItemPositioned', orderItems );
+	cdabody.on( 'dragItemPositioned', function(){
+		orderItems()
+	});
 	$('.toc').off('click').click(function(){
 		var section=$('.section[data-code="'+$(this).attr('data-code')+'"]')
 		if(section.is(':visible')){
@@ -439,10 +441,9 @@ function moveup(section,li,bRefresh){
 function movedown(section,li,bRefresh){
 	curr=li
 	curr.fadeOut(function(){
-	//t=li.parent().find('li:last')
-	t=curr.next('[data-code]')
-	t.after(curr)
-	curr.fadeIn()
+		t=curr.next('[data-code]')
+		t.after(curr)
+		curr.fadeIn()
 	})
 
 	//f=section.parent().find('div.section:eq(1)')
@@ -468,14 +469,15 @@ function movedown(section,li,bRefresh){
 }
 function orderItems(){
 	firstsection=[];
+	restore=$('#restore')
 	var itemElems = $('#cdabody').packery('getItemElements');
 	$( itemElems ).each( function( i, itemElem ) {
-//		$( itemElem ).find('span.pos').text(i+' '+$( itemElem ).attr('data-code'))
-//		$( itemElem ).find('span.pos').text(i+1+'. ' )
-		firstsection.push($( itemElem ).attr('data-code'))
+		var code=$( itemElem ).attr('data-code')
+		firstsection.push(code)
+		li=$('.toc[data-code="'+code+'"]')
+		restore.before(li)
 	});	
 	localStorage.setItem("firstsection", firstsection);
-	$('#cdabody').packery();
 }
 
 function comparer(index) {
@@ -502,4 +504,3 @@ var loaded = function() {
 		//$('#transform').get(0).click()
 	}
 }
- 
