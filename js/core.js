@@ -12,7 +12,6 @@ $(document).ready(function(){
 		$('#'+id_target).show()
 	})
 	init()
-	init()
 	$('#ghrepos').click(function(){
 		ghowner=$('#ghowner').val()
 		var url='https://api.github.com/users/'+ghowner+'/repos?sort=asc';
@@ -221,6 +220,14 @@ function init(){
 			$(this).removeClass('hide')
 			$(this).find('i.tocli').removeClass('fa-square-o').addClass('fa-check-square-o')
 		}
+		th=$('#tochead')
+		if($('li.hide.toc[data-code]').length!=0){
+			if(th.find('i.fa-warning').length==0)
+				th.prepend('<i class="fa fa-warning fa-lg" style="margin-right:0.5em" title="Sections are hidden"></i>')				
+		}
+		else{
+			th.find('i.fa-warning').remove()
+		}
 	})
 	$('#tochead').off('click').click(function(){
 		$('#toc').slideToggle(function(){
@@ -321,8 +328,15 @@ function init(){
 			}
 			cdabody.packery()	
 			$('.toc[data-code="'+code+'"]').addClass('hide').find('i.tocli').removeClass('fa-check-square-o').addClass('fa-square-o')
-		})
-		
+			th=$('#tochead')
+			if($('li.hide.toc[data-code]').length!=0){
+				if(th.find('i.fa-warning').length==0)
+					th.prepend('<i class="fa fa-warning fa-lg" style="margin-right:0.5em" title="Sections are hidden"></i>')				
+			}
+			else{
+				th.find('i.fa-warning').remove()
+			}
+		})		
 	})
 
 
