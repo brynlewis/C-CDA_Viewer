@@ -23,7 +23,7 @@ Users can hide, collapse and move any section of a CDA document.
 
 <h2>Demonstration</h2>
 A demonstration version is deployed here:
-http://intelsoft.com.au/challenge/index.htm
+http://brynlewis.org/challenge/index.htm
 
 <h2>Features</h2>
 <ul>
@@ -97,8 +97,8 @@ Icons: font-awesome standard icon set. https://fortawesome.github.io/Font-Awesom
 Background css: purecss.io
 
 <h2>Copyright</h2>
- Copyright (c) 2016 Bryn Lewis (<mailto:brynlewis@intelsoft.com.au>)
-<http://intelsoft.com.au>
+ Copyright (c) 2016 Bryn Lewis (<mailto:brynlewis@brynlewis.org>)
+<http://brynlewis.org>
  
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
