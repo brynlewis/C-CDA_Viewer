@@ -1,5 +1,6 @@
 <h1>HL7 C-CDA Viewer</h1>
 
+You can cite this repository in your articles using this reference: 
 <a href="https://zenodo.org/badge/latestdoi/58436029"><img src="https://zenodo.org/badge/58436029.svg" alt="DOI"></a>
 
 <h2>Synopsis</h2>
