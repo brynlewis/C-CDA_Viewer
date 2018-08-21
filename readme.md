@@ -1,5 +1,7 @@
 <h1>HL7 C-CDA Viewer</h1>
 
+<a href="https://zenodo.org/badge/latestdoi/58436029"><img src="https://zenodo.org/badge/58436029.svg" alt="DOI"></a>
+
 <h2>Synopsis</h2>
 Easy to use rendering of complex C-CDA documents directly in any web browser.
 Responsive document layout automatically adjusts to make optimum use of the available screen space.
