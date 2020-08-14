@@ -29,7 +29,16 @@ $(document).ready(function(){
 
 	$('#fileInput').change(function(){
         startProcessing($("#fileInput"), populateResults, populateError, populateProgress);		
-	})
+    })
+    
+    $('#cdaxml').on('drop', function (e) {
+        if(e.originalEvent.dataTransfer && e.originalEvent.dataTransfer.files.length) {
+            e.preventDefault();
+            e.stopPropagation();
+            var file = e.originalEvent.dataTransfer.files[0];
+            dropfile(file);
+        }
+    });    
 })
 function loadrepos(xhr){
 	var ojson=xhr;
@@ -85,7 +94,16 @@ function loadcontents(data,reponame,owner,path){
 			cdaxml=$(this).attr('file')
 		}
 		new Transformation().setXml(cdaxml).setXslt('cda.xsl').transform("viewcda");
-	})
+    })
+    
+    $('#cdaxml').on('drop', function (e) {
+        if(e.originalEvent.dataTransfer && e.originalEvent.dataTransfer.files.length) {
+            e.preventDefault();
+            e.stopPropagation();
+            var file = e.originalEvent.dataTransfer.files[0];
+            dropfile(file);
+        }
+    });
 }
 function init(){
 	sectionorder=[];
@@ -517,4 +535,12 @@ var loaded = function() {
 		$('#cdaxml').val(xmload.responseText)
 		//$('#transform').get(0).click()
 	}
+}
+
+function dropfile(file) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $('#cdaxml').val(e.target.result);
+    };
+    reader.readAsText(file, "UTF-8");
 }
